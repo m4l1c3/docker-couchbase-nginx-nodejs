@@ -1,5 +1,12 @@
 version: "3.3"
 services:
+    nginx:
+        build:
+            context: ./nginx
+        links: 
+            - node
+        ports:
+            - "80:80"
     db:
         image: arungupta/couchbase
         ports:
@@ -8,15 +15,15 @@ services:
             - "8093:8093"
             - "8094:8094"
             - "11210:11210"
+        volumes:
+            - ./docker-couch-data:/opt/couch/data
     node:
-        image: node:latest
+        build:
+            context: ./node
         ports: 
-            - 8888:8888
+            - "8888:8888"
         links:
-            - "db:couchbase"
-    nginx:
-        image: nginx
-        links: 
-            - "node"
-        ports:
-            - "80:80"
+            - db
+        # environment:
+        #     DATABASE_URL: http://localhost:8091
+    
