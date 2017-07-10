@@ -1,12 +1,5 @@
 version: "3.3"
 services:
-    nginx:
-        build:
-            context: ./nginx
-        links: 
-            - node
-        ports:
-            - "80:80"
     db:
         image: arungupta/couchbase
         ports:
@@ -26,4 +19,10 @@ services:
             - db
         # environment:
         #     DATABASE_URL: http://localhost:8091
-    
+    nginx:
+        build:
+            context: ./nginx
+        links: 
+            - node
+        ports:
+            - "80:80"
