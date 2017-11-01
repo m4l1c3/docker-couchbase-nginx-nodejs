@@ -1,0 +1,23 @@
+{
+  "name": "docker-couchbase-nginx-nodejs",
+  "version": "1.0.0",
+  "description": "docker image that builds containers for couchbase and a web server to run nodejs apps.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m4l1c3/docker-couchbase-nginx-nodejs.git"
+  },
+  "author": "m4l1c3",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/m4l1c3/docker-couchbase-nginx-nodejs/issues"
+  },
+  "homepage": "https://github.com/m4l1c3/docker-couchbase-nginx-nodejs#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
